@@ -1,1 +1,1 @@
-轮播图组件与vue深度处理器
+vue-awsome-swiper与轮播图组件
