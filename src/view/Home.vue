@@ -74,6 +74,7 @@
 <script>
 import MyHeader from "@/components/myHeader";
 import Carousel from "@/components/carousel";
+import axios from "axios";
 
 export default {
   name: "home",
@@ -84,8 +85,21 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
-  methods: {}
+  mounted() {
+    this.getIndexData();
+  },
+  methods: {
+    getIndexData() {
+      axios
+        .get("/api/appData")
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  }
 };
 </script>
 <style lang="less" scoped>
@@ -121,7 +135,7 @@ export default {
     .content {
       .item {
         background: #fff;
-        margin-bottom: .133333rem;
+        margin-bottom: 0.133333rem;
         img {
           width: 100%;
           height: 4.8rem;
